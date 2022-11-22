@@ -1,20 +1,18 @@
-function App(){
-    const bootcamps =[
-        {id:1, name: 'Luisa', avarege_rating:8},
-        {id:2, name: 'Pepe', avarege_rating:73}
-    ]
+import { useState } from "react";
+import ReseniaList from "./componentes/ReseniaList";
 
+import Resenias from "./data/Resenias"
+
+function App(){
+
+    const [lista_resenias, setListResenias] = useState (Resenias)
     return(
-        <>
-        <h1> Creo que este es el Titulo!</h1>,
-        <ul >
-            {bootcamps.map((bootcamp, index)=>(
-            <li key={index}>{bootcamp.name}</li>
-        ))
-        }
-        </ul>
-        </>
+        <div className="container">
+            <ReseniaList listaresenias={lista_resenias} />
+
+            
+        </div>
     )
 }
 
-export default App
+export default App;
