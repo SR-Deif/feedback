@@ -1,5 +1,7 @@
 import { useState } from "react";
-const Resenia = ({resenia}) => {
+import {FaTimes} from 'react-icons/fa';
+
+const Resenia = ({resenia, deleteResenia}) => {
 
     const [rating, setRating ] = useState(resenia.rating)
     const [commet, setCommet ] = useState(resenia.text)
@@ -13,7 +15,7 @@ const Resenia = ({resenia}) => {
             return prev - 1
         })
     }
-
+    
     return (
         
         <div className="card">
@@ -24,8 +26,8 @@ const Resenia = ({resenia}) => {
             <div className="text-display">
                 {commet}
             </div>
-            <button onClick={(cambiar)}>
-                Me sumas +1
+            <button className="close" onClick={()=>deleteResenia(resenia.id)}>
+                <FaTimes></FaTimes>
             </button>
             <button onClick={(resNota)}>
                 Me restas -1
