@@ -1,25 +1,30 @@
+//dependencias necesarias
 import { useState } from "react";
+//data
+import Resenias from "./data/Resenias";
+//componentes
+import Header from "./componentes/Header";
+import Resenia from "./componentes/Resenia";
 import ReseniaList from "./componentes/ReseniaList";
-
-import Resenias from "./data/Resenias"
 
 function App(){
 
-    const [lista_resenias, setListResenias] = useState (Resenias)
+    //crear estado inicial para arreglo de resenias
+    const [lista_resenias ,
+           setListaResenias  ] = useState(Resenias)
 
-    const deleteResenia = id =>{
-        window.confirm("Quieres eliminar la resenia?¿")
-    }
+    //metodo para borrar una resenia:
+    const deleteResenia = id => {
+        window.confirm("estas seguro de borrar la resenia")
+    }       
 
-    return(
+    return (
         <div className="container">
-            <ReseniaList
-            deleteResenia={deleteResenia}
-            listaresenias={lista_resenias} />
-
-            
+             <ReseniaList
+                deleteResenia={deleteResenia}
+                listaresenias={lista_resenias}  />
         </div>
+        
     )
 }
-
 export default App;

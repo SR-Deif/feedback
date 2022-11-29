@@ -1,39 +1,36 @@
-import { useState } from "react";
-import {FaTimes} from 'react-icons/fa';
+import { useState } from 'react'
+import { FaTimes } from "react-icons/fa";
 
-const Resenia = ({resenia, deleteResenia}) => {
+const Resenia = ({ resenia, deleteResenia  }) => {
 
-    const [rating, setRating ] = useState(resenia.rating)
-    const [commet, setCommet ] = useState(resenia.text)
-    const cambiar=() =>{
-        setRating((prev)=>{
+    //Definir estados iniciales:
+    const [rating , setRating ] = useState(resenia.rating)
+    const [comment ,
+           setComment ] = useState(resenia.text)
+
+    //cambiar el estado del rating
+    const addNota = () => {
+        setRating((prev)=> { 
             return prev + 1
         })
-    }
-    const resNota = () =>{ 
-        setRating((prev)=>{
-            return prev - 1
-        })
-    }
+    }  
     
-    return (
-        
-        <div className="card">
-            <div className="hum-display">
-                {rating}
-            </div>
+    const restNota = () => {
 
-            <div className="text-display">
-                {commet}
+    }
+
+    return (
+        <div className="card">
+            <div className="num-display">
+                { rating  }
             </div>
-            <button className="close" onClick={()=>deleteResenia(resenia.id)}>
-                <FaTimes></FaTimes>
-            </button>
-            <button onClick={(resNota)}>
-                Me restas -1
+            <div className="text-display">
+                { comment }
+            </div>
+            <button onClick={ () => deleteResenia(resenia.id) } className="close">
+                 <FaTimes />
             </button>
         </div>
     )
 }
-
-export default Resenia;
+export default Resenia
