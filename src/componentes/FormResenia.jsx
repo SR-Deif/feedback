@@ -10,12 +10,19 @@ export const FormResenia = () => {
         setText(e.target.value)
     }
 
-    
+    const constrolSubmit = (e) => {
+        e.preventDefault()
+        let newResenia={
+            rating,
+            text
+        }
+        console.log(newResenia)
+    }
 
     return (
         <div className="card" >
 
-            <form onSubmit={ }>
+            <form onSubmit={constrolSubmit}>
                 <h2>Como calificarias el curso?¿</h2>
                 <Rating setRating={setRating} />
                 <div className="input-group" >
