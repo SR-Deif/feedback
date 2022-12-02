@@ -10,11 +10,12 @@ export const FormResenia = () => {
         setText(e.target.value)
     }
 
+    
+
     return (
         <div className="card" >
 
-            <form onSubmit={(e)=>{e.preventDefault(); 
-                sonsole.log("hola")} }>
+            <form onSubmit={ }>
                 <h2>Como calificarias el curso?¿</h2>
                 <Rating setRating={setRating} />
                 <div className="input-group" >
