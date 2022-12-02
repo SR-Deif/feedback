@@ -2,7 +2,7 @@ import React from 'react'
 import Rating from "./Rating";
 import { useState } from "react"
 
-export const FormResenia = () => {
+export const FormResenia = ({addResenia}) => {
 
     const [rating, setRating] = useState(10)
     const [text, setText] = useState('')
@@ -12,11 +12,11 @@ export const FormResenia = () => {
 
     const constrolSubmit = (e) => {
         e.preventDefault()
-        let newResenia={
+        let newResenia = {
             rating,
             text
         }
-        console.log(newResenia)
+        addResenia(newResenia)
     }
 
     return (

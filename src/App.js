@@ -20,9 +20,14 @@ function App() {
         }
     }
 
+    const addResenia=(newResenia)=>{
+        newResenia.id =lista_resenias + 1
+        setListaResenias([newResenia, ...lista_resenias])
+    }
+
     return (
         <div className="container">
-            <FormResenia></FormResenia>
+            <FormResenia addResenia={addResenia} />
             <ReseniaList
                 deleteResenia={deleteResenia}
                 listaresenias={lista_resenias} />
