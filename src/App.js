@@ -20,8 +20,8 @@ function App() {
         }
     }
 
-    const addResenia=(newResenia)=>{
-        newResenia.id =lista_resenias + 1
+    const addResenia = (newResenia) => {
+        newResenia.id = lista_resenias + 1
         setListaResenias([newResenia, ...lista_resenias])
     }
 
@@ -34,4 +34,7 @@ function App() {
         </div>
     )
 }
+/**Aplicar buenas prácticas de calidad en el proceso de desarrollo de software, de acuerdo con el referente adoptado en la empresa.
+resultado de aprendizaje
+Evaluar procesos y productos de desarrollo de software, documentar y concertar acciones a seguir, para garantizar el cumplimiento de las normas establecidas, de acuerdo con el plan definido y con los criterios de medición, métrico y político determinados por la empresa. */
 export default App;
